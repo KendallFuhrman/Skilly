@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F0E59C81EEF30FC00394688 /* AddQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0E59C71EEF30FC00394688 /* AddQViewController.swift */; };
+		6F0E59CA1EEF311100394688 /* AddSkillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0E59C91EEF311100394688 /* AddSkillViewController.swift */; };
+		6F1FCE5B1EEF3E3A003A0DC0 /* MarketCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1FCE5A1EEF3E3A003A0DC0 /* MarketCollectionViewController.swift */; };
 		6F6163281EEEFA8000B8ED1C /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6163271EEEFA8000B8ED1C /* EditProfileViewController.swift */; };
 		6F61632A1EEEFA8A00B8ED1C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6163291EEEFA8A00B8ED1C /* ProfileViewController.swift */; };
 		6FB32CB01EEAC8FC007D267E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB32CAF1EEAC8FC007D267E /* AppDelegate.swift */; };
@@ -14,9 +17,15 @@
 		6FB32CB51EEAC8FC007D267E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FB32CB31EEAC8FC007D267E /* Main.storyboard */; };
 		6FB32CB71EEAC8FC007D267E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6FB32CB61EEAC8FC007D267E /* Assets.xcassets */; };
 		6FB32CBA1EEAC8FC007D267E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FB32CB81EEAC8FC007D267E /* LaunchScreen.storyboard */; };
+		9E840A1333915CEEEA4E1888 /* Pods_Skilly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 632E4490336620BC998574B0 /* Pods_Skilly.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		495B7B6E80471B951224EA22 /* Pods-Skilly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Skilly.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Skilly/Pods-Skilly.debug.xcconfig"; sourceTree = "<group>"; };
+		632E4490336620BC998574B0 /* Pods_Skilly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Skilly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F0E59C71EEF30FC00394688 /* AddQViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddQViewController.swift; sourceTree = "<group>"; };
+		6F0E59C91EEF311100394688 /* AddSkillViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSkillViewController.swift; sourceTree = "<group>"; };
+		6F1FCE5A1EEF3E3A003A0DC0 /* MarketCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketCollectionViewController.swift; sourceTree = "<group>"; };
 		6F6163271EEEFA8000B8ED1C /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditProfileViewController.swift; path = ../EditProfileViewController.swift; sourceTree = "<group>"; };
 		6F6163291EEEFA8A00B8ED1C /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = ../ProfileViewController.swift; sourceTree = "<group>"; };
 		6FB32CAC1EEAC8FC007D267E /* Skilly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Skilly.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -26,6 +35,7 @@
 		6FB32CB61EEAC8FC007D267E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6FB32CB91EEAC8FC007D267E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6FB32CBB1EEAC8FC007D267E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D6DF66ADA4DD7122F8C9E544 /* Pods-Skilly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Skilly.release.xcconfig"; path = "Pods/Target Support Files/Pods-Skilly/Pods-Skilly.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +43,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E840A1333915CEEEA4E1888 /* Pods_Skilly.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0AAEF758624C6499F3445ECA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				495B7B6E80471B951224EA22 /* Pods-Skilly.debug.xcconfig */,
+				D6DF66ADA4DD7122F8C9E544 /* Pods-Skilly.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		6FB32CA31EEAC8FC007D267E = {
 			isa = PBXGroup;
 			children = (
 				6FB32CAE1EEAC8FC007D267E /* Skilly */,
 				6FB32CAD1EEAC8FC007D267E /* Products */,
+				0AAEF758624C6499F3445ECA /* Pods */,
+				7B80A14F4AA63E7FF4117C8E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,6 +83,9 @@
 				6FB32CAF1EEAC8FC007D267E /* AppDelegate.swift */,
 				6FB32CB11EEAC8FC007D267E /* ViewController.swift */,
 				6FB32CB31EEAC8FC007D267E /* Main.storyboard */,
+				6F0E59C71EEF30FC00394688 /* AddQViewController.swift */,
+				6F0E59C91EEF311100394688 /* AddSkillViewController.swift */,
+				6F1FCE5A1EEF3E3A003A0DC0 /* MarketCollectionViewController.swift */,
 				6FB32CB61EEAC8FC007D267E /* Assets.xcassets */,
 				6FB32CB81EEAC8FC007D267E /* LaunchScreen.storyboard */,
 				6FB32CBB1EEAC8FC007D267E /* Info.plist */,
@@ -70,6 +95,14 @@
 			path = Skilly;
 			sourceTree = "<group>";
 		};
+		7B80A14F4AA63E7FF4117C8E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				632E4490336620BC998574B0 /* Pods_Skilly.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,9 +110,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6FB32CBE1EEAC8FC007D267E /* Build configuration list for PBXNativeTarget "Skilly" */;
 			buildPhases = (
+				E8AB92419B60E7582F35F947 /* [CP] Check Pods Manifest.lock */,
 				6FB32CA81EEAC8FC007D267E /* Sources */,
 				6FB32CA91EEAC8FC007D267E /* Frameworks */,
 				6FB32CAA1EEAC8FC007D267E /* Resources */,
+				6704C245F672FC0397830AF8 /* [CP] Embed Pods Frameworks */,
+				D18ACF7F5DCCBB2D3F020BDB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -138,13 +174,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6704C245F672FC0397830AF8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Skilly/Pods-Skilly-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D18ACF7F5DCCBB2D3F020BDB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Skilly/Pods-Skilly-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E8AB92419B60E7582F35F947 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6FB32CA81EEAC8FC007D267E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F0E59CA1EEF311100394688 /* AddSkillViewController.swift in Sources */,
 				6FB32CB21EEAC8FC007D267E /* ViewController.swift in Sources */,
+				6F0E59C81EEF30FC00394688 /* AddQViewController.swift in Sources */,
 				6FB32CB01EEAC8FC007D267E /* AppDelegate.swift in Sources */,
+				6F1FCE5B1EEF3E3A003A0DC0 /* MarketCollectionViewController.swift in Sources */,
 				6F61632A1EEEFA8A00B8ED1C /* ProfileViewController.swift in Sources */,
 				6F6163281EEEFA8000B8ED1C /* EditProfileViewController.swift in Sources */,
 			);
@@ -269,6 +356,7 @@
 		};
 		6FB32CBF1EEAC8FC007D267E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 495B7B6E80471B951224EA22 /* Pods-Skilly.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 866JLEMQEN;
@@ -282,6 +370,7 @@
 		};
 		6FB32CC01EEAC8FC007D267E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6DF66ADA4DD7122F8C9E544 /* Pods-Skilly.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 866JLEMQEN;

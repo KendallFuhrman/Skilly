@@ -31,8 +31,8 @@
         <!--MarketPlace View Controller-->
         <scene sceneID="TLZ-3o-RF0">
             <objects>
-                <collectionViewController id="cmP-4v-2Cs" userLabel="MarketPlace View Controller" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="LOR-eZ-End">
+                <collectionViewController id="cmP-4v-2Cs" userLabel="MarketPlace View Controller" customClass="MarketCollectionViewController" customModule="Skilly" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="LOR-eZ-End">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -59,17 +59,28 @@
                     </collectionView>
                     <navigationItem key="navigationItem" id="i9A-O0-MJ5">
                         <nil key="title"/>
-                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="W15-jL-BGo">
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="IuG-kP-V2E">
                             <rect key="frame" x="112.5" y="7" width="150" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="Query"/>
                                 <segment title="Skills"/>
                             </segments>
+                            <connections>
+                                <action selector="segmentSwitch:" destination="cmP-4v-2Cs" eventType="valueChanged" id="Sx7-0n-Ofj"/>
+                            </connections>
                         </segmentedControl>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="oGk-um-nJ3"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="oGk-um-nJ3">
+                            <connections>
+                                <action selector="add:" destination="cmP-4v-2Cs" id="QiM-hz-JsY"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="add" destination="oGk-um-nJ3" id="moV-Jb-KsN"/>
+                        <outlet property="navigationItem" destination="oGk-um-nJ3" id="xkn-Fz-N15"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q21-60-eMg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -115,10 +126,10 @@
             </objects>
             <point key="canvasLocation" x="2577" y="1053"/>
         </scene>
-        <!--Add Request View Controller-->
+        <!--Add Q View Controller-->
         <scene sceneID="ADY-pi-o8M">
             <objects>
-                <viewController id="eXa-cV-Jid" userLabel="Add Request View Controller" sceneMemberID="viewController">
+                <viewController id="eXa-cV-Jid" userLabel="Add Q View Controller" customClass="AddQViewController" customModule="Skilly" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0Yr-bO-JCy"/>
                         <viewControllerLayoutGuide type="bottom" id="bTj-bP-cYM"/>
@@ -185,7 +196,7 @@
         <!--Add Skill View Controller-->
         <scene sceneID="i3l-dT-Db7">
             <objects>
-                <viewController id="sqo-GZ-8sc" userLabel="Add Skill View Controller" sceneMemberID="viewController">
+                <viewController id="sqo-GZ-8sc" userLabel="Add Skill View Controller" customClass="AddSkillViewController" customModule="Skilly" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BoT-6Y-Qr2"/>
                         <viewControllerLayoutGuide type="bottom" id="Klp-wk-e21"/>
@@ -271,7 +282,6 @@
         <!--Item-->
         <scene sceneID="dci-ul-O44">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8Ed-qE-Rfj" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uuE-hL-qtP" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="abS-n1-QYb"/>
                     <toolbarItems/>
@@ -284,6 +294,7 @@
                         <segue destination="GSG-De-cwi" kind="relationship" relationship="rootViewController" id="eC9-lB-lqy"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Ed-qE-Rfj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1638" y="-1702"/>
         </scene>
