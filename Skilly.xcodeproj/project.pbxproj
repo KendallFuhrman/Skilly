@@ -12,6 +12,7 @@
 		6F1FCE5B1EEF3E3A003A0DC0 /* MarketCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1FCE5A1EEF3E3A003A0DC0 /* MarketCollectionViewController.swift */; };
 		6F3BD3021EEFF48B0068B22C /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3BD3011EEFF48B0068B22C /* Post.swift */; };
 		6F3BD3041EEFF7450068B22C /* AddPostDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3BD3031EEFF7450068B22C /* AddPostDelegate.swift */; };
+		6F3BD3061EF01FF00068B22C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3BD3051EF01FF00068B22C /* LoginViewController.swift */; };
 		6F6163281EEEFA8000B8ED1C /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6163271EEEFA8000B8ED1C /* EditProfileViewController.swift */; };
 		6F61632A1EEEFA8A00B8ED1C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6163291EEEFA8A00B8ED1C /* ProfileViewController.swift */; };
 		6FB32CB01EEAC8FC007D267E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB32CAF1EEAC8FC007D267E /* AppDelegate.swift */; };
@@ -30,6 +31,7 @@
 		6F1FCE5A1EEF3E3A003A0DC0 /* MarketCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketCollectionViewController.swift; sourceTree = "<group>"; };
 		6F3BD3011EEFF48B0068B22C /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		6F3BD3031EEFF7450068B22C /* AddPostDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPostDelegate.swift; sourceTree = "<group>"; };
+		6F3BD3051EF01FF00068B22C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		6F6163271EEEFA8000B8ED1C /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditProfileViewController.swift; path = ../EditProfileViewController.swift; sourceTree = "<group>"; };
 		6F6163291EEEFA8A00B8ED1C /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = ../ProfileViewController.swift; sourceTree = "<group>"; };
 		6FB32CAC1EEAC8FC007D267E /* Skilly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Skilly.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,6 +89,7 @@
 				6FB32CAF1EEAC8FC007D267E /* AppDelegate.swift */,
 				6FB32CB11EEAC8FC007D267E /* ViewController.swift */,
 				6FB32CB31EEAC8FC007D267E /* Main.storyboard */,
+				6F3BD3051EF01FF00068B22C /* LoginViewController.swift */,
 				6F3BD3031EEFF7450068B22C /* AddPostDelegate.swift */,
 				6F3BD3011EEFF48B0068B22C /* Post.swift */,
 				6F0E59C71EEF30FC00394688 /* AddQViewController.swift */,
@@ -241,6 +244,7 @@
 				6F1FCE5B1EEF3E3A003A0DC0 /* MarketCollectionViewController.swift in Sources */,
 				6F61632A1EEEFA8A00B8ED1C /* ProfileViewController.swift in Sources */,
 				6F6163281EEEFA8000B8ED1C /* EditProfileViewController.swift in Sources */,
+				6F3BD3061EF01FF00068B22C /* LoginViewController.swift in Sources */,
 				6F3BD3041EEFF7450068B22C /* AddPostDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

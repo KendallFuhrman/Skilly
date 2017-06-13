@@ -16,9 +16,15 @@ class Post: Decodable, Glossy {
     var description: String?
     
     
+    init?() {
+        self.title = ""
+        self.price = ""
+        self.description = nil
+    }
+    
 required init?(json: JSON) {
     self.title = "title" <~~ json
-    self.price = "price" <~~ json
+    self.price = ("price" <~~ json)!
     self.description = "description" <~~ json
 }
 

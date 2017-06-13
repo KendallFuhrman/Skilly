@@ -39,6 +39,10 @@ class AddQViewController: UIViewController {
             case .failure: break
                 // Failure... handle error
             }
+            print(response.request)  // original URL request
+            print(response.response) // HTTP URL response
+            print(response.data)     // server data
+            print(response.result)   // result of response serialization
         }
     }
 

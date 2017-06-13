@@ -10,4 +10,6 @@ target 'Skilly' do
     pod 'Alamofire', '~> 4.4'
     pod 'Gloss', '~> 1.2'
 
+    pod 'FacebookCore'
+    pod 'FacebookLogin'
 end

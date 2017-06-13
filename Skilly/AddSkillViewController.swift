@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class AddSkillViewController: UIViewController {
+class AddSkillViewController: UIViewController, UINavigationControllerDelegate {
 
     var delegate: AddPostDelegate?
     var newPost: Post?
@@ -25,11 +25,12 @@ class AddSkillViewController: UIViewController {
     
     @IBAction func post(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+        newPost = Post()
         
         newPost?.title = titleText.text!
         newPost?.price =  priceText.text!
         newPost?.description = descriptionText.text
-        
+        print("new Post")
         Alamofire.request("https://skilly-3b5b9.firebaseio.com/post.json", method: .post, parameters: newPost?.toJSON(), encoding: JSONEncoding.default).responseJSON { response in
             
             switch response.result {
@@ -39,6 +40,8 @@ class AddSkillViewController: UIViewController {
             case .failure: break
                 // Failure... handle error
             }
+            
+           
         }
 
     }
