@@ -109,8 +109,8 @@
                             <rect key="frame" x="108" y="6.5" width="159" height="31"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
-                                <segment title="Your Posts"/>
                                 <segment title="Messages"/>
+                                <segment title="Your Posts"/>
                             </segments>
                         </segmentedControl>
                     </navigationItem>
@@ -190,6 +190,11 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="descriptionText" destination="D4K-YL-M0M" id="o3l-Oa-zvM"/>
+                        <outlet property="priceText" destination="4Un-cm-4B5" id="mqi-9L-H7G"/>
+                        <outlet property="titleText" destination="o0V-T4-16V" id="YQd-N5-Pra"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Fs-rt-2R3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -265,6 +270,11 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="descriptionText" destination="VHV-xP-QMO" id="eDv-xk-PO9"/>
+                        <outlet property="priceText" destination="9Wm-GH-DD4" id="NbQ-NG-LKR"/>
+                        <outlet property="titleText" destination="21v-OY-tEC" id="qjs-we-6yd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xvN-Ln-XmI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
