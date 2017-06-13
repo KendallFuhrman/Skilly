@@ -11,19 +11,27 @@ import UIKit
 private let reuseIdentifier = "Cell"
 
 class MarketCollectionViewController: UICollectionViewController {
-
-    @IBOutlet weak var add: UIBarButtonItem!
+    
+    var vcToNavTo = "addQVC"
+    
     
     @IBAction func segmentSwitch(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
             print ("q")
-        
-            
+            vcToNavTo = "addQVC"
         }
         if sender.selectedSegmentIndex == 1 {
             print ("s")
+            vcToNavTo = "addSVC"
         }
 
+    }
+    
+    
+    @IBAction func navigate(_ sender: Any) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: vcToNavTo)
+        self.present(vc!, animated: true, completion: nil)
+//        self.navigationController?.pushViewController(vc!, animated: true)
     }
     
     override func viewDidLoad() {
@@ -57,7 +65,7 @@ class MarketCollectionViewController: UICollectionViewController {
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
 
