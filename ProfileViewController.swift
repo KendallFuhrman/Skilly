@@ -10,11 +10,47 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
+    @IBOutlet weak var userName: UILabel!
+    
+    @IBOutlet weak var job: UILabel!
+    @IBOutlet weak var education: UILabel!
+    @IBOutlet weak var city: UILabel!
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        userName.text = UserDefaults.standard.string(forKey: "name")
+        job.text = UserDefaults.standard.string(forKey: "job")
+        education.text = UserDefaults.standard.string(forKey: "education")
+        city.text = UserDefaults.standard.string(forKey: "city")
+        
+    }
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        userName.text = UserDefaults.standard.string(forKey: "name")
+        job.text = UserDefaults.standard.string(forKey: "job")
+        education.text = UserDefaults.standard.string(forKey: "education")
+        city.text = UserDefaults.standard.string(forKey: "city")
+        
+        
+        if UserDefaults.standard.string(forKey: "name") == nil {
+            UserDefaults.standard.set("Create User Name" , forKey: "userName")
+        }
+        
+        if UserDefaults.standard.string(forKey: "job") == nil {
+            UserDefaults.standard.set("Enter Current Position" , forKey: "job")
+            }
+            
+        if UserDefaults.standard.string(forKey: "education") == nil {
+            UserDefaults.standard.set("Enter Education" , forKey: "education")
+            }
+        if UserDefaults.standard.string(forKey: "city") == nil {
+                UserDefaults.standard.set("Enter Current City" , forKey: "city")
+            
+            }
+    
     }
 
     override func didReceiveMemoryWarning() {

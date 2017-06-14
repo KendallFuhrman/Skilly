@@ -8,8 +8,6 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
-
 class MarketCollectionViewController: UICollectionViewController {
     
     var vcToNavTo = "addQVC"
@@ -41,7 +39,6 @@ class MarketCollectionViewController: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
     }
@@ -71,17 +68,19 @@ class MarketCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 1
+        return 0
     }
 
+    /*
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "one", for: indexPath)
     
         // Configure the cell
-        cell.backgroundColor = UIColor.black
+        //cell.backgroundColor = UIColor.black
     
         return cell
     }
+ */
 
     // MARK: UICollectionViewDelegate
 

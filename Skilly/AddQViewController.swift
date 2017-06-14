@@ -25,7 +25,7 @@ class AddQViewController: UIViewController {
     @IBAction func post(_ sender: Any) {
         dismiss(animated: true, completion: nil)
         
-        
+        newPost = Post()
         newPost?.title = titleText.text!
         newPost?.price =  priceText.text!
         newPost?.description = descriptionText.text

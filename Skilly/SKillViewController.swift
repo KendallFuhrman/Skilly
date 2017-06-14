@@ -1,36 +1,15 @@
 //
-//  EditProfileViewController.swift
+//  SKillViewController.swift
 //  Skilly
 //
-//  Created by Kendall Fuhrman on 6/12/17.
+//  Created by Kendall Fuhrman on 6/14/17.
 //  Copyright © 2017 Kendall Fuhrman. All rights reserved.
 //
 
 import UIKit
 
-class EditProfileViewController: UIViewController {
+class SKillViewController: UIViewController {
 
-    @IBOutlet weak var nameText: UITextField!
-    
-    @IBOutlet weak var surnameText: UITextField!
-    
-    
-    @IBOutlet weak var jobText: UITextField!
-    
-    
-    @IBOutlet weak var eduText: UITextField!
-    
-    @IBOutlet weak var cityText: UITextField!
-    
-    
-    @IBAction func cancel(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
-    
-    
-    @IBAction func save(_ sender: Any) {
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
