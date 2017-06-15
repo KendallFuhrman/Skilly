@@ -12,4 +12,6 @@ target 'Skilly' do
 
     pod 'FacebookCore'
     pod 'FacebookLogin'
+    pod 'PageMenu'
+    
 end

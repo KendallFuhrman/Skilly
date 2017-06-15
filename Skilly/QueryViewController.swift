@@ -10,12 +10,14 @@ import UIKit
 
 class QueryViewController: UIViewController {
 
-    @IBOutlet weak var titleField: UITextField!
+    @IBOutlet weak var textField: UITextField!
     
     @IBOutlet weak var priceField: UITextField!
     
     @IBOutlet weak var descriptionField: UITextView!
     
+    @IBAction func postQ(_ sender: Any) {
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

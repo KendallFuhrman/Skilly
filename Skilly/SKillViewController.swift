@@ -14,6 +14,7 @@ class SKillViewController: UIViewController {
     @IBOutlet weak var priceField: UITextField!
     @IBOutlet weak var descriptionField: UITextView!
     
+    @IBOutlet weak var postS: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 

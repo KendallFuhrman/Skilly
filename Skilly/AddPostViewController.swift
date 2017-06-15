@@ -7,62 +7,49 @@
 //
 
 import UIKit
+import PageMenu
 
 class AddPostViewController: UIViewController {
     
-    
-    @IBOutlet weak var containerView: UIView!
-    var currentViewController: UIViewController?
-
-   
-    @IBAction func showAddComponent(_ sender: UISegmentedControl) {
-        if sender.selectedSegmentIndex == 0 {
-            let newViewController = self.storyboard?.instantiateViewController(withIdentifier: "queryVC")
-            newViewController!.view.translatesAutoresizingMaskIntoConstraints = false
-            self.cycleFromViewController(oldViewController: self.currentViewController!, toViewController: newViewController!)
-            self.currentViewController = newViewController;
-        } else {
-            let newViewController = self.storyboard?.instantiateViewController(withIdentifier: "skillsVC")
-            newViewController!.view.translatesAutoresizingMaskIntoConstraints = false
-            self.cycleFromViewController(oldViewController: self.currentViewController!, toViewController: newViewController!)
-            self.currentViewController = newViewController
-        }
-
-}
-    
-    func cycleFromViewController(oldViewController: UIViewController, toViewController newViewController: UIViewController) {
-        oldViewController.willMove(toParentViewController: nil)
-        self.addChildViewController(newViewController)
-        self.addSubview(subView: newViewController.view, toView: self.containerView!)
-        newViewController.view.alpha = 0
-        newViewController.view.layoutIfNeeded()
-//        UIView.animate(withDuration: 0.5, animations { newViewController.view.alpha = 1
-//            oldViewController.view.alpha = 0
-//        },
-//            completion: { finsihed in
-//                oldViewController.view.removeFromSuperview()
-//                oldViewController.view.removeFromParentViewController()
-//                newViewController.didMove(toParentViewController: self)
-//        })
+    @IBAction func cancel(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
+    var pageMenu: CAPSPageMenu?
     
     override func viewDidLoad() {
-    
-        self.currentViewController = self.storyboard?.instantiateViewController(withIdentifier: "queryVC")
-        self.currentViewController!.view.translatesAutoresizingMaskIntoConstraints = false
-        self.addChildViewController(self.currentViewController!)
-        self.addSubview(subView: self.currentViewController!.view, toView: self.containerView)
         super.viewDidLoad()
         
-    }
-    func addSubview(subView: UIView, toView parentView: UIView){
-        parentView.addSubview(subView)
+        var viewControllers: [UIViewController] = []
         
-        var viewBindingsDict = [String: AnyObject]()
-        viewBindingsDict["subView"] = subView
-//        parentView.addConstraint(NSLayoutConstraint.constraints(withVisualFormat: "H: [subview]", options: [], metrics: nil, views: viewBindingsDict)
-//        parentView.addConstraint(NSLayoutConstraint.constraints(withVisualFormat: "V: [subview]", options: [], metrics: nil, views: viewBindingsDict)
+        // Instantiate your VCs
+        let vcSkill = storyboard?.instantiateViewController(withIdentifier: "skillsVC")
+        vcSkill?.title = "Skill"
+        viewControllers.append(vcSkill!)
         
+        let vcQuery = storyboard?.instantiateViewController(withIdentifier: "queryVC")
+        vcQuery?.title = "Query"
+        viewControllers.append(vcQuery!)
+        
+        var parameters: [CAPSPageMenuOption] = [
+            .menuItemSeparatorWidth(4.3),
+            .scrollMenuBackgroundColor(UIColor.white),
+            .viewBackgroundColor(UIColor(red: 247.0/255.0, green: 247.0/255.0, blue: 247.0/255.0, alpha: 1.0)),
+            .bottomMenuHairlineColor(UIColor(red: 20.0/255.0, green: 20.0/255.0, blue: 20.0/255.0, alpha: 0.1)),
+            .selectionIndicatorColor(UIColor(red: 48/255.0, green: 35/255.0, blue: 174/255.0, alpha: 1.0)),
+            .menuMargin(20.0),
+            .menuHeight(40.0),
+            .selectedMenuItemLabelColor(UIColor(red: 48/255.0, green: 35/255.0, blue: 174/255.0, alpha: 1.0)),
+            .unselectedMenuItemLabelColor(UIColor(red: 40.0/255.0, green: 40.0/255.0, blue: 40.0/255.0, alpha: 1.0)),
+            .menuItemFont(UIFont(name: "Hiragino Sans", size: 20.0)!),
+            .useMenuLikeSegmentedControl(true),
+            .menuItemSeparatorRoundEdges(true),
+            .selectionIndicatorHeight(2.0),
+            .menuItemSeparatorPercentageHeight(0.1)
+        ]
+        
+        pageMenu = CAPSPageMenu(viewControllers: viewControllers, frame: CGRect(x: 0.0, y: 65, width: self.view.frame.width, height: self.view.frame.height), pageMenuOptions: parameters)
+        
+        self.view.addSubview((pageMenu?.view)!)
         
     }
 
@@ -71,7 +58,6 @@ class AddPostViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
     /*
     // MARK: - Navigation
 

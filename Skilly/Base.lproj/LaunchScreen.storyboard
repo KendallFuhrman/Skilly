@@ -22,13 +22,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="skillylogo" translatesAutoresizingMaskIntoConstraints="NO" id="Bug-Ma-bj7">
-                                <rect key="frame" x="38" y="158" width="299" height="299"/>
+                                <rect key="frame" x="38" y="184" width="299" height="299"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="SKILLY" translatesAutoresizingMaskIntoConstraints="NO" id="6vW-ML-Bnk">
+                                <rect key="frame" x="75" y="74" width="224" height="41"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Bug-Ma-bj7" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="138" id="9F6-9V-FlN"/>
-                            <constraint firstItem="Bug-Ma-bj7" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="zUG-Fi-WSm"/>
+                            <constraint firstItem="6vW-ML-Bnk" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="54" id="f31-IJ-Air"/>
+                            <constraint firstItem="6vW-ML-Bnk" firstAttribute="centerX" secondItem="Bug-Ma-bj7" secondAttribute="centerX" id="g5g-WK-o5T"/>
+                            <constraint firstItem="Bug-Ma-bj7" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ldq-nG-zcW"/>
+                            <constraint firstItem="Bug-Ma-bj7" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="qmM-EG-uUx"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -38,6 +43,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="SKILLY" width="224" height="41"/>
         <image name="skillylogo" width="299" height="299"/>
     </resources>
 </document>
