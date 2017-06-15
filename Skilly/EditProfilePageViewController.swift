@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EditProfilePageViewController: UIViewController {
+class EditProfilePageViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
 
     @IBOutlet weak var profilePicker: UIImageView!
     
@@ -32,9 +32,37 @@ class EditProfilePageViewController: UIViewController {
         UserDefaults.standard.set(educationField.text, forKey: "education")
         UserDefaults.standard.set(cityField.text, forKey: "city")
         
+        
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func selectImageFromGallery(_ sender: Any) {
+        
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.sourceType = .photoLibrary
+        imagePickerController.delegate = self
+        present(imagePickerController, animated: true, completion: nil)
+        
+    }
+
+func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+    dismiss(animated: true, completion: nil)
+}
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        // The info dictionary may contain multiple representations of the image. You want to use the original.
+        guard let selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage else {
+            fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
+        }
+        
+        // Set image to display the selected image.
+        profilePicker.image = selectedImage
+        
+        
+        // Dismiss the picker.
+        dismiss(animated: true, completion: nil)
+    }
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -10,6 +10,7 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
+    @IBOutlet weak var profilePhoto: UIImageView!
     @IBOutlet weak var userName: UILabel!
     
     @IBOutlet weak var job: UILabel!
@@ -22,6 +23,7 @@ class ProfileViewController: UIViewController {
         job.text = UserDefaults.standard.string(forKey: "job")
         education.text = UserDefaults.standard.string(forKey: "education")
         city.text = UserDefaults.standard.string(forKey: "city")
+        
         
     }
     

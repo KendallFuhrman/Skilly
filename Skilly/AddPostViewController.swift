@@ -11,23 +11,59 @@ import UIKit
 class AddPostViewController: UIViewController {
     
     
+    @IBOutlet weak var containerView: UIView!
+    var currentViewController: UIViewController?
 
-    @IBAction func navToAdd (_ sender: UISegmentedControl) {
+   
+    @IBAction func showAddComponent(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
-            print ("q")
+            let newViewController = self.storyboard?.instantiateViewController(withIdentifier: "queryVC")
+            newViewController!.view.translatesAutoresizingMaskIntoConstraints = false
+            self.cycleFromViewController(oldViewController: self.currentViewController!, toViewController: newViewController!)
+            self.currentViewController = newViewController;
+        } else {
+            let newViewController = self.storyboard?.instantiateViewController(withIdentifier: "skillsVC")
+            newViewController!.view.translatesAutoresizingMaskIntoConstraints = false
+            self.cycleFromViewController(oldViewController: self.currentViewController!, toViewController: newViewController!)
+            self.currentViewController = newViewController
+        }
+
+}
     
-            
-        }
-        if sender.selectedSegmentIndex == 1{
-           print ("s")
-            
-        }
+    func cycleFromViewController(oldViewController: UIViewController, toViewController newViewController: UIViewController) {
+        oldViewController.willMove(toParentViewController: nil)
+        self.addChildViewController(newViewController)
+        self.addSubview(subView: newViewController.view, toView: self.containerView!)
+        newViewController.view.alpha = 0
+        newViewController.view.layoutIfNeeded()
+//        UIView.animate(withDuration: 0.5, animations { newViewController.view.alpha = 1
+//            oldViewController.view.alpha = 0
+//        },
+//            completion: { finsihed in
+//                oldViewController.view.removeFromSuperview()
+//                oldViewController.view.removeFromParentViewController()
+//                newViewController.didMove(toParentViewController: self)
+//        })
+    }
+    
+    override func viewDidLoad() {
+    
+        self.currentViewController = self.storyboard?.instantiateViewController(withIdentifier: "queryVC")
+        self.currentViewController!.view.translatesAutoresizingMaskIntoConstraints = false
+        self.addChildViewController(self.currentViewController!)
+        self.addSubview(subView: self.currentViewController!.view, toView: self.containerView)
+        super.viewDidLoad()
         
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    func addSubview(subView: UIView, toView parentView: UIView){
+        parentView.addSubview(subView)
+        
+        var viewBindingsDict = [String: AnyObject]()
+        viewBindingsDict["subView"] = subView
+//        parentView.addConstraint(NSLayoutConstraint.constraints(withVisualFormat: "H: [subview]", options: [], metrics: nil, views: viewBindingsDict)
+//        parentView.addConstraint(NSLayoutConstraint.constraints(withVisualFormat: "V: [subview]", options: [], metrics: nil, views: viewBindingsDict)
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
