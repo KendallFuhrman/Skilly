@@ -30,6 +30,8 @@ class AddPostViewController: UIViewController {
         vcQuery?.title = "Query"
         viewControllers.append(vcQuery!)
         
+       // Create the parameters or how the tabs will look
+        
         var parameters: [CAPSPageMenuOption] = [
             .menuItemSeparatorWidth(4.3),
             .scrollMenuBackgroundColor(UIColor.white),
@@ -46,6 +48,7 @@ class AddPostViewController: UIViewController {
             .selectionIndicatorHeight(2.0),
             .menuItemSeparatorPercentageHeight(0.1)
         ]
+        // Location of menu bar
         
         pageMenu = CAPSPageMenu(viewControllers: viewControllers, frame: CGRect(x: 0.0, y: 65, width: self.view.frame.width, height: self.view.frame.height), pageMenuOptions: parameters)
         

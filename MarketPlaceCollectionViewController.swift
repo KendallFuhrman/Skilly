@@ -1,37 +1,17 @@
 //
-//  MarketCollectionViewController.swift
-//  Skilly
+//  MarketPlaceCollectionViewController.swift
+//  
 //
-//  Created by Kendall Fuhrman on 6/12/17.
-//  Copyright © 2017 Kendall Fuhrman. All rights reserved.
+//  Created by Kendall Fuhrman on 6/15/17.
+//
 //
 
 import UIKit
 
-class MarketCollectionViewController: UICollectionViewController {
-    
-    var vcToNavTo = "addQVC"
-    
-    
-    @IBAction func segmentSwitch(_ sender: UISegmentedControl) {
-        if sender.selectedSegmentIndex == 0 {
-            print ("q")
-            vcToNavTo = "addQVC"
-        }
-        if sender.selectedSegmentIndex == 1 {
-            print ("s")
-            vcToNavTo = "addSVC"
-        }
+private let reuseIdentifier = "Cell"
 
-    }
-    
-    
-    @IBAction func navigate(_ sender: Any) {
-        let vc = storyboard?.instantiateViewController(withIdentifier: vcToNavTo)
-        self.present(vc!, animated: true, completion: nil)
-//        self.navigationController?.pushViewController(vc!, animated: true)
-    }
-    
+class MarketPlaceCollectionViewController: UICollectionViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,6 +19,7 @@ class MarketCollectionViewController: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
+        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
     }
@@ -62,7 +43,7 @@ class MarketCollectionViewController: UICollectionViewController {
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 0
     }
 
 
@@ -71,16 +52,13 @@ class MarketCollectionViewController: UICollectionViewController {
         return 0
     }
 
-    /*
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "one", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
     
         // Configure the cell
-        //cell.backgroundColor = UIColor.black
     
         return cell
     }
- */
 
     // MARK: UICollectionViewDelegate
 

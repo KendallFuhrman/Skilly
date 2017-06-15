@@ -15,7 +15,8 @@ class QueryViewController: UIViewController {
     @IBOutlet weak var priceField: UITextField!
     
     @IBOutlet weak var descriptionField: UITextView!
-    
+
+// Save a post to Firebase 
     @IBAction func postQ(_ sender: Any) {
     }
     override func viewDidLoad() {
