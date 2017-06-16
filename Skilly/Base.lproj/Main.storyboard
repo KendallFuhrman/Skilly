@@ -313,11 +313,8 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Enter Current City" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uFn-pf-PjA">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Current City" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uFn-pf-PjA">
                                 <rect key="frame" x="42" y="554" width="330" height="26"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="26" id="n6k-o3-2ME"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="20"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -331,26 +328,32 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create User Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="16" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sUF-IU-dMk">
                                 <rect key="frame" x="42" y="434" width="330" height="30"/>
                                 <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="30"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.22367037764660602" green="0.22367037764660602" blue="0.22367037764660602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k5l-aU-jtW">
                                 <rect key="frame" x="45" y="130" width="326" height="174"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="profilePhoto" translatesAutoresizingMaskIntoConstraints="NO" id="cnV-gr-oZJ">
+                                <rect key="frame" x="77" y="82" width="260" height="260"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="k2W-6O-eaf" firstAttribute="trailing" secondItem="uFn-pf-PjA" secondAttribute="trailing" id="D2c-Ul-N2o"/>
+                            <constraint firstItem="cnV-gr-oZJ" firstAttribute="top" secondItem="dFO-z8-wE6" secondAttribute="bottom" constant="18" id="2Z9-x2-xne"/>
                             <constraint firstItem="k2W-6O-eaf" firstAttribute="leading" secondItem="HBi-VU-I3a" secondAttribute="leading" id="LFc-94-IWQ"/>
                             <constraint firstItem="sUF-IU-dMk" firstAttribute="trailing" secondItem="1WB-a6-Z5T" secondAttribute="trailing" id="M4M-Od-9cB"/>
                             <constraint firstItem="HBi-VU-I3a" firstAttribute="trailing" secondItem="sUF-IU-dMk" secondAttribute="trailing" id="SPe-AG-WJH"/>
+                            <constraint firstItem="cnV-gr-oZJ" firstAttribute="centerX" secondItem="1WB-a6-Z5T" secondAttribute="centerX" id="TDR-NF-vSH"/>
                             <constraint firstItem="sUF-IU-dMk" firstAttribute="leading" secondItem="1WB-a6-Z5T" secondAttribute="leading" id="Tfh-XK-Q9a"/>
                             <constraint firstItem="k2W-6O-eaf" firstAttribute="top" secondItem="HBi-VU-I3a" secondAttribute="bottom" constant="6" id="VH8-Es-ccs"/>
-                            <constraint firstItem="k2W-6O-eaf" firstAttribute="leading" secondItem="uFn-pf-PjA" secondAttribute="leading" id="cqs-AW-4SD"/>
+                            <constraint firstItem="uFn-pf-PjA" firstAttribute="trailing" secondItem="k2W-6O-eaf" secondAttribute="trailing" id="bGV-il-NUL"/>
                             <constraint firstItem="HBi-VU-I3a" firstAttribute="top" secondItem="sUF-IU-dMk" secondAttribute="bottom" constant="12" id="d1q-fw-I3h"/>
-                            <constraint firstItem="uFn-pf-PjA" firstAttribute="top" secondItem="k2W-6O-eaf" secondAttribute="bottom" constant="21" id="eKJ-QG-duv"/>
+                            <constraint firstItem="uFn-pf-PjA" firstAttribute="top" secondItem="k2W-6O-eaf" secondAttribute="bottom" constant="6" id="dcn-Fh-3LZ"/>
+                            <constraint firstItem="8TL-Vv-S0Z" firstAttribute="top" secondItem="uFn-pf-PjA" secondAttribute="bottom" constant="107" id="iUf-ta-KBh"/>
                             <constraint firstAttribute="bottom" secondItem="sUF-IU-dMk" secondAttribute="bottom" constant="272" id="jFB-C4-bUL"/>
+                            <constraint firstItem="uFn-pf-PjA" firstAttribute="leading" secondItem="k2W-6O-eaf" secondAttribute="leading" id="jwz-gl-aQ3"/>
                             <constraint firstItem="HBi-VU-I3a" firstAttribute="leading" secondItem="sUF-IU-dMk" secondAttribute="leading" id="nBn-Da-4Ah"/>
                             <constraint firstItem="sUF-IU-dMk" firstAttribute="leading" secondItem="kbW-bI-Nc1" secondAttribute="leadingMargin" constant="22" id="pYK-Rg-47K"/>
                             <constraint firstItem="k2W-6O-eaf" firstAttribute="trailing" secondItem="HBi-VU-I3a" secondAttribute="trailing" id="r2Y-pS-f0P"/>
@@ -1313,6 +1316,7 @@
         <image name="mp1" width="168" height="168"/>
         <image name="postQueryButton" width="147" height="42"/>
         <image name="postSkillButton" width="147" height="42"/>
+        <image name="profilePhoto" width="260" height="260"/>
         <image name="profileicon" width="23" height="29"/>
         <image name="skillylogo" width="299" height="299"/>
         <image name="textgreen" width="345" height="51"/>
