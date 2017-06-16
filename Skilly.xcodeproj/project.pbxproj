@@ -15,6 +15,8 @@
 		6F7C6CFC1EF2D89400C6CB79 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7C6CFB1EF2D89400C6CB79 /* Profile.swift */; };
 		6F7C6CFE1EF2E01F00C6CB79 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6F7C6CFD1EF2E01F00C6CB79 /* GoogleService-Info.plist */; };
 		6F7C6D001EF3C34700C6CB79 /* PostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7C6CFF1EF3C34700C6CB79 /* PostCollectionViewCell.swift */; };
+		6F7C6D021EF3EA0E00C6CB79 /* ExpandedQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7C6D011EF3EA0E00C6CB79 /* ExpandedQViewController.swift */; };
+		6F7C6D041EF3EA1D00C6CB79 /* ExpandedSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7C6D031EF3EA1D00C6CB79 /* ExpandedSViewController.swift */; };
 		6FB32CB01EEAC8FC007D267E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB32CAF1EEAC8FC007D267E /* AppDelegate.swift */; };
 		6FB32CB21EEAC8FC007D267E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB32CB11EEAC8FC007D267E /* ViewController.swift */; };
 		6FB32CB51EEAC8FC007D267E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FB32CB31EEAC8FC007D267E /* Main.storyboard */; };
@@ -39,6 +41,8 @@
 		6F7C6CFB1EF2D89400C6CB79 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		6F7C6CFD1EF2E01F00C6CB79 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6F7C6CFF1EF3C34700C6CB79 /* PostCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCollectionViewCell.swift; sourceTree = "<group>"; };
+		6F7C6D011EF3EA0E00C6CB79 /* ExpandedQViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandedQViewController.swift; sourceTree = "<group>"; };
+		6F7C6D031EF3EA1D00C6CB79 /* ExpandedSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandedSViewController.swift; sourceTree = "<group>"; };
 		6FB32CAC1EEAC8FC007D267E /* Skilly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Skilly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FB32CAF1EEAC8FC007D267E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6FB32CB11EEAC8FC007D267E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +113,8 @@
 				6FE54AFF1EF15B1B00C9E0BD /* QueryViewController.swift */,
 				6FE54B011EF15B2700C9E0BD /* SKillViewController.swift */,
 				6FE54AFD1EF1423600C9E0BD /* ExpandedPostViewController.swift */,
+				6F7C6D011EF3EA0E00C6CB79 /* ExpandedQViewController.swift */,
+				6F7C6D031EF3EA1D00C6CB79 /* ExpandedSViewController.swift */,
 				6F3BD3031EEFF7450068B22C /* AddPostDelegate.swift */,
 				6F3BD3011EEFF48B0068B22C /* Post.swift */,
 				6FB32CB61EEAC8FC007D267E /* Assets.xcassets */,
@@ -253,7 +259,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6FB32CB21EEAC8FC007D267E /* ViewController.swift in Sources */,
+				6F7C6D021EF3EA0E00C6CB79 /* ExpandedQViewController.swift in Sources */,
 				6F7C6CF81EF2C16000C6CB79 /* MarketPlaceCollectionViewController.swift in Sources */,
+				6F7C6D041EF3EA1D00C6CB79 /* ExpandedSViewController.swift in Sources */,
 				6F3BD3021EEFF48B0068B22C /* Post.swift in Sources */,
 				6F7C6CFC1EF2D89400C6CB79 /* Profile.swift in Sources */,
 				6FB32CB01EEAC8FC007D267E /* AppDelegate.swift in Sources */,
