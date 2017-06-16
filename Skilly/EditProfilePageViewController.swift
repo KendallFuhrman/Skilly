@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import FirebaseStorage
+import FirebaseAuth
 
 class EditProfilePageViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
     
@@ -27,6 +28,7 @@ class EditProfilePageViewController: UIViewController, UIImagePickerControllerDe
     @IBOutlet weak var cityField: UITextField!
     
     @IBOutlet weak var progress: UIProgressView!
+        
     
     @IBAction func cancel(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -39,17 +41,28 @@ class EditProfilePageViewController: UIViewController, UIImagePickerControllerDe
         newProfileInfo?.job = jobField.text!
         newProfileInfo?.education = educationField.text!
         newProfileInfo?.location = cityField.text!
-        newProfileInfo?.image = profilePicker.image!
+        
         
         if let image = profilePicker.image {
+            newProfileInfo?.image = profilePicker.image!
             // Get a reference to the storage service using the default Firebase App
             let storage = Storage.storage()
             
             // Create a storage reference from our storage service
             let storageRef = storage.reference()
             
+            let user = Auth.auth().currentUser
+            if let user = user {
+                let uid = user.uid
+                let email = user.email
+                let photoURL = user.photoURL
+                // ...
+            } else {
+                // user not authenticated
+            }
+
             if let imageName = newProfileInfo?.name {
-                let imagesRef = storageRef.child("images/\(imageName).jpg")
+                let imagesRef = storageRef.child("images/\(user?.uid).jpg")
                 
                 // Local file you want to upload
                 //let localFile = image. //URL(string: "path/to/image")!
@@ -108,17 +121,34 @@ class EditProfilePageViewController: UIViewController, UIImagePickerControllerDe
     }
     
     func updateProfile() {
-        Alamofire.request("https://skilly-3b5b9.firebaseio.com/profile.json", method: .post, parameters: newProfileInfo?.toJSON(), encoding: JSONEncoding.default).responseJSON { response in
+        
+        let user = Auth.auth().currentUser
+        if let user = user {
+            let uid = user.uid
+            let email = user.email
+            let photoURL = user.photoURL
             
-            switch response.result {
-            case .success(let _):
-                self.delegate?.didSaveProfile(activity: self.newProfileInfo!)
-                self.dismiss(animated: true, completion: nil)
-            case .failure: break
-                // Failure... handle error
+            
+            var url = URL(string: "https://skilly-3b5b9.firebaseio.com/profile/\(uid).json")
+            
+            Alamofire.request(url!, method: .put, parameters: newProfileInfo?.toJSON(), encoding: JSONEncoding.default).responseJSON { response in
+                
+                switch response.result {
+                case .success(let _):
+                    self.delegate?.didSaveProfile(activity: self.newProfileInfo!)
+                    self.dismiss(animated: true, completion: nil)
+                case .failure: break
+                    // Failure... handle error
+                }
             }
+
+            // ...
+        } else {
+            // user not authenticated
+
         }
-    }
+
+            }
 
 
 

@@ -18,12 +18,9 @@ class MarketPlaceCollectionViewController: UICollectionViewController {
     
 
     var posts: [Post] = []
-
-
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    
+    override func viewDidAppear(_ animated: Bool) {
+        posts = []
         Alamofire.request("https://skilly-3b5b9.firebaseio.com/post.json").responseJSON { response in
             //print(response.request)  // original URL request
             //print(response.response) // HTTP URL response
@@ -56,32 +53,38 @@ class MarketPlaceCollectionViewController: UICollectionViewController {
                 let storageRef = Storage.storage().reference()
                 
                 //    let imagesRef = storageRef.child("images/\(profile.name!).jpg")
-                //    
+                //
                 //    imagesRef.getData(maxSize: 10 * 1024 * 1024, completion: {(data, error) in
-                //    
-//                if let error = error {
-//                    // Uh-oh, an error occurred!
-//                    print(error.localizedDescription)
-//                } else {
-//                    // Data for "images/island.jpg" is returned
-//                    //    post.image = UIImage(data: data!)
-//                    self.collectionView?.reloadData()
-//                }
+                //
+                //                if let error = error {
+                //                    // Uh-oh, an error occurred!
+                //                    print(error.localizedDescription)
+                //                } else {
+                //                    // Data for "images/island.jpg" is returned
+                //                    //    post.image = UIImage(data: data!)
+                //                    self.collectionView?.reloadData()
+                //                }
                 
             }
-        
             
+            
+            
+            
+            // Uncomment the following line to preserve selection between presentations
+            // self.clearsSelectionOnViewWillAppear = false
+            
+            // Register cell classes
+            //        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+            
+            // Do any additional setup after loading the view.
+        }
 
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-//        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
     }
-    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+            }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

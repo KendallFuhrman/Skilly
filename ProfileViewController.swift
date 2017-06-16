@@ -9,8 +9,11 @@
 import UIKit
 import FacebookCore
 import FacebookLogin
+import Alamofire
+import FirebaseAuth
 
 class ProfileViewController: UIViewController, LoginButtonDelegate {
+
 
     @IBOutlet weak var profilePhoto: UIImageView!
     @IBOutlet weak var userName: UILabel!
@@ -21,51 +24,47 @@ class ProfileViewController: UIViewController, LoginButtonDelegate {
     
 
     override func viewDidAppear(_ animated: Bool) {
-        userName.text = UserDefaults.standard.string(forKey: "name")
-        job.text = UserDefaults.standard.string(forKey: "job")
-        education.text = UserDefaults.standard.string(forKey: "education")
-        city.text = UserDefaults.standard.string(forKey: "city")
-        if UserDefaults.standard.string(forKey: "name") == nil {
-            UserDefaults.standard.set("Create User Name" , forKey: "userName")
+        
+        let user = Auth.auth().currentUser
+        if let user = user {
+            let uid = user.uid
+            let email = user.email
+            let photoURL = user.photoURL
+            
+        Alamofire.request("https://skilly-3b5b9.firebaseio.com/profile/\(uid).json").responseJSON { response in
+                if let JSON = response.result.value {
+                    print("JSON: \(JSON)")
+                    
+                    if let response = JSON as? [String : AnyObject] {
+                    
+                        var profile = Profile()
+                        
+                            profile?.name = response["name"] as? String
+                            profile?.job = response ["job"] as? String
+                            profile?.education = response["education"] as? String
+                            profile?.location = response["location"] as? String
+                        
+                            self.userName.text = profile?.name
+                            self.job.text = profile?.job
+                            self.education.text = profile?.education
+                            self.city.text = profile?.location
+                        
+                        
+                    }
+                }
+            }
+            // ...
+        } else {
+            // user not authenticated
         }
         
-        if UserDefaults.standard.string(forKey: "job") == nil {
-            UserDefaults.standard.set("Enter Current Position" , forKey: "job")
-        }
         
-        if UserDefaults.standard.string(forKey: "education") == nil {
-            UserDefaults.standard.set("Enter Education" , forKey: "education")
-        }
-        if UserDefaults.standard.string(forKey: "city") == nil {
-            UserDefaults.standard.set("Enter Current City" , forKey: "city")
-        }
-
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        userName.text = UserDefaults.standard.string(forKey: "name")
-        job.text = UserDefaults.standard.string(forKey: "job")
-        education.text = UserDefaults.standard.string(forKey: "education")
-        city.text = UserDefaults.standard.string(forKey: "city")
         
         
-        if UserDefaults.standard.string(forKey: "name") == nil {
-            UserDefaults.standard.set("Create User Name" , forKey: "userName")
-        }
-        
-        if UserDefaults.standard.string(forKey: "job") == nil {
-            UserDefaults.standard.set("Enter Current Position" , forKey: "job")
-        }
-        
-        if UserDefaults.standard.string(forKey: "education") == nil {
-            UserDefaults.standard.set("Enter Education" , forKey: "education")
-        }
-        if UserDefaults.standard.string(forKey: "city") == nil {
-            UserDefaults.standard.set("Enter Current City" , forKey: "city")
-            
-        }
-
         if let accessToken = AccessToken.current {
             //AlreadyLogged in
         }
@@ -79,6 +78,28 @@ class ProfileViewController: UIViewController, LoginButtonDelegate {
     
     func loginButtonDidCompleteLogin(_ loginBUtton: LoginButton,
                                      result: LoginResult) {
+        
+        let credential = FacebookAuthProvider.credential(withAccessToken: (AccessToken.current?.authenticationToken)!)
+        
+        Auth.auth().signIn(with: credential) { (user, error) in
+            if let error = error {
+                // ...
+                print(error)
+                return
+            }
+            // User is signed in
+            // ...
+            print("Firebase logged in")
+            let user = Auth.auth().currentUser
+            if let user = user {
+                let uid = user.uid
+                let email = user.email
+                let photoURL = user.photoURL
+                // ...
+            } else {
+                // user not authenticated
+            }
+        }
         
         //User has logged in
         print(result)

@@ -12,6 +12,7 @@ import Gloss
 class Profile: Decodable, Glossy {
     
     var name: String?
+    var myUserId: String!
     var job: String?
     var education: String?
     var location: String?
@@ -27,7 +28,10 @@ class Profile: Decodable, Glossy {
         self.image = nil
         self.imageURL = ""
     }
+    func setID (userID: String) {
+        myUserId = userID
     
+    }
     required init?(json: JSON) {
         self.name = "name" <~~ json
         self.job = ("job" <~~ json)!

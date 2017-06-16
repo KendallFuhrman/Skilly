@@ -15,5 +15,6 @@ target 'Skilly' do
     pod 'PageMenu'
     pod 'FirebaseStorage'
     pod 'Firebase/Core'
+    pod 'Firebase/Auth'
     
 end
