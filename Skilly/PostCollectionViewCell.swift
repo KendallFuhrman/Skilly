@@ -11,4 +11,6 @@ import UIKit
 class PostCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
 }

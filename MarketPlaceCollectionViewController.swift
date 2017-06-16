@@ -114,16 +114,16 @@ class MarketPlaceCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "postCell", for: indexPath) as! PostCollectionViewCell
     
         if posts[indexPath.row].type == "s" {
-            cell.backgroundColor = UIColor.purple
+            cell.backgroundColor = (UIColor(red: 136/255.0, green: 145/255.0, blue: 253/255.0, alpha: 1.0))
         } else {
-            cell.backgroundColor = UIColor.green
+            cell.backgroundColor = (UIColor(red: 102/255.0, green: 236/255.0, blue: 248/255.0, alpha: 1.0))
         }
         // Configure the cell
         
         cell.titleLabel?.text = posts[indexPath.row].title
-//        cell.priceLabel?.text = posts[indexPath.row].price
-//        cell.descriptionLabel?.text = posts[indexPath.row].description
-//
+        cell.priceLabel?.text = posts[indexPath.row].price
+        cell.descriptionLabel?.text = posts[indexPath.row].description
+
 //        if let image = activities[indexPath.row].image {
 //            cell.imageView?.image = image
         
