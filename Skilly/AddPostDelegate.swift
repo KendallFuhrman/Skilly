@@ -9,6 +9,6 @@
 import Foundation
 
 protocol AddPostDelegate {
-    func didSaveActivity(activity: Post)
-    func didCancelActivity()
+    func didSavePost(activity: Post)
+    func didCancelPost()
 }

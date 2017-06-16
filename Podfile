@@ -13,5 +13,7 @@ target 'Skilly' do
     pod 'FacebookCore'
     pod 'FacebookLogin'
     pod 'PageMenu'
+    pod 'FirebaseStorage'
+    pod 'Firebase/Core'
     
 end

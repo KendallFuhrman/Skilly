@@ -7,19 +7,50 @@
 //
 
 import UIKit
+import Alamofire
 
 class SKillViewController: UIViewController {
+    
+    var delegate: AddPostDelegate?
+    var newPost: Post?
 
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var priceField: UITextField!
     @IBOutlet weak var descriptionField: UITextView!
     
-    @IBOutlet weak var postS: UIButton!
+    var type = "s"
+    
+   
+
+    @IBAction func postS(_ sender: Any) {
+        newPost = Post()
+        newPost?.title = titleField.text!
+        newPost?.price = priceField.text!
+        newPost?.description = descriptionField.text!
+        newPost?.type = type
+        
+        postPost()
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+    
+    func postPost() {
+        Alamofire.request("https://skilly-3b5b9.firebaseio.com/post.json", method: .post, parameters: newPost?.toJSON(), encoding: JSONEncoding.default).responseJSON { response in
+            
+            switch response.result {
+            case .success(let _):
+                self.delegate?.didSavePost(activity: self.newPost!)
+            case .failure: break
+                // Failure... handle error
+            }
+        }
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

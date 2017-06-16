@@ -7,21 +7,80 @@
 //
 
 import UIKit
+import Alamofire
+import FirebaseStorage
+import Gloss
 
-private let reuseIdentifier = "Cell"
+
+
 
 class MarketPlaceCollectionViewController: UICollectionViewController {
+    
+
+    var posts: [Post] = []
+
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        Alamofire.request("https://skilly-3b5b9.firebaseio.com/post.json").responseJSON { response in
+            //print(response.request)  // original URL request
+            //print(response.response) // HTTP URL response
+            //print(response.data)     // server data
+            //print(response.result)   // result of response serialization
+            
+            if let JSON = response.result.value {
+                print("JSON: \(JSON)")
+                
+                let response = JSON as! NSDictionary
+                
+                for (key, value) in response {
+                    let post = Post()
+                    
+                    if let postDictionary = value as? [String : AnyObject] {
+                        post?.title = postDictionary["title"] as? String
+                        post?.price = postDictionary ["price"] as? String
+                        post?.description = postDictionary["description"] as? String
+                        post?.type = postDictionary["type"] as? String
+                        
+                    }
+                    
+                    self.posts.append(post!)
+                }
+                self.collectionView?.reloadData()
+            }
+            // Loop through activities and download images
+            for post in self.posts {
+                
+                let storageRef = Storage.storage().reference()
+                
+                //    let imagesRef = storageRef.child("images/\(profile.name!).jpg")
+                //    
+                //    imagesRef.getData(maxSize: 10 * 1024 * 1024, completion: {(data, error) in
+                //    
+//                if let error = error {
+//                    // Uh-oh, an error occurred!
+//                    print(error.localizedDescription)
+//                } else {
+//                    // Data for "images/island.jpg" is returned
+//                    //    post.image = UIImage(data: data!)
+//                    self.collectionView?.reloadData()
+//                }
+                
+            }
+        
+            
+
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+//        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
+    }
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,20 +102,31 @@ class MarketPlaceCollectionViewController: UICollectionViewController {
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
+        return Int(posts.count)
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "postCell", for: indexPath) as! PostCollectionViewCell
     
+        if posts[indexPath.row].type == "s" {
+            cell.backgroundColor = UIColor.purple
+        } else {
+            cell.backgroundColor = UIColor.green
+        }
         // Configure the cell
-    
+        
+        cell.titleLabel?.text = posts[indexPath.row].title
+//        cell.priceLabel?.text = posts[indexPath.row].price
+//        cell.descriptionLabel?.text = posts[indexPath.row].description
+//
+//        if let image = activities[indexPath.row].image {
+//            cell.imageView?.image = image
+        
         return cell
     }
 

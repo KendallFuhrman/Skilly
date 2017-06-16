@@ -7,22 +7,51 @@
 //
 
 import UIKit
+import Alamofire
+
 
 class QueryViewController: UIViewController {
+    
+    var delegate: AddPostDelegate?
+    var newPost: Post?
 
     @IBOutlet weak var textField: UITextField!
     
     @IBOutlet weak var priceField: UITextField!
     
     @IBOutlet weak var descriptionField: UITextView!
+    
+    var type = "q"
 
-// Save a post to Firebase 
+// Save a post to Firebase
+    
     @IBAction func postQ(_ sender: Any) {
+       
+        newPost = Post()
+            
+        newPost?.title = textField.text!
+        newPost?.price = priceField.text!
+        newPost?.description = descriptionField.text!
+        newPost?.type = type
+        
+        postPost()
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    func postPost() {
+        Alamofire.request("https://skilly-3b5b9.firebaseio.com/post.json", method: .post, parameters: newPost?.toJSON(), encoding: JSONEncoding.default).responseJSON { response in
+            
+            switch response.result {
+            case .success(let _):
+                self.delegate?.didSavePost(activity: self.newPost!)
+            case .failure: break
+                // Failure... handle error
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {

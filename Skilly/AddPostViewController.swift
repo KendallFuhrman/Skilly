@@ -9,7 +9,7 @@
 import UIKit
 import PageMenu
 
-class AddPostViewController: UIViewController {
+class AddPostViewController: UIViewController, AddPostDelegate {
     
     @IBAction func cancel(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -22,13 +22,15 @@ class AddPostViewController: UIViewController {
         var viewControllers: [UIViewController] = []
         
         // Instantiate your VCs
-        let vcSkill = storyboard?.instantiateViewController(withIdentifier: "skillsVC")
-        vcSkill?.title = "Skill"
-        viewControllers.append(vcSkill!)
+        let vcSkill = storyboard?.instantiateViewController(withIdentifier: "skillsVC") as! SKillViewController
+        vcSkill.title = "Skill"
+        vcSkill.delegate = self
+        viewControllers.append(vcSkill)
         
-        let vcQuery = storyboard?.instantiateViewController(withIdentifier: "queryVC")
-        vcQuery?.title = "Query"
-        viewControllers.append(vcQuery!)
+        let vcQuery = storyboard?.instantiateViewController(withIdentifier: "queryVC") as! QueryViewController
+        vcQuery.title = "Query"
+        vcQuery.delegate = self
+        viewControllers.append(vcQuery)
         
        // Create the parameters or how the tabs will look
         
@@ -59,6 +61,14 @@ class AddPostViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func didSavePost(activity: Post) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func didCancelPost() {
+        dismiss(animated: true, completion: nil)
     }
     
     /*
